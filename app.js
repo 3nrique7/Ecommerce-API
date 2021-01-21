@@ -7,11 +7,11 @@ var express = require('express');
 var mongoose = require('mongoose');
 var cors = require('cors')
 var expressValidator  = require('express-validator');//req.checkbody()
-const mongoConfig = require('./configs/mongo-config')
+//const mongoConfig = require('./configs/mongo-config')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-mongoose.connect(mongoConfig, { useNewUrlParser: true, useCreateIndex: true, },function(error){
+mongoose.connect('mongodb+srv://Dennis:72189202@cluster0.zmd0g.mongodb.net/Commerce?retryWrites=true&w=majority', { useNewUrlParser: true, useCreateIndex: true, },function(error){
   if(error) throw error
     console.log(`connect mongodb success`);
 });
